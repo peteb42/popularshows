@@ -1,28 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- Both tags represent the components with the contained code(Header, Card) -->
+    <Header/>
+    <Card/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import both of the vue components you created into App.vue
+import Header from './components/Header.vue'
+import Card from './components/Card.vue'
+//import axios from 'axios'
 
 export default {
   name: 'App',
+  //These are the components you created to include in your website
   components: {
-    HelloWorld
+    Header,
+    Card
+  },
+  /*
+  data() {
+    return {
+      results: ''
+    }
+  },
+
+  mounted() {
+    axios.get("https://api.themoviedb.org/3/tv/popular?api_key=7a382377ded02d04b294930106237183&language=en-US&page=1")
+    .then((response) => {
+      this.results = response.data.results;
+    })
   }
+  */
 }
 </script>
 
 <style>
+* {
+  margin:0;
+  padding:0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family:Arial;
+  overflow-x:hidden;
 }
 </style>
